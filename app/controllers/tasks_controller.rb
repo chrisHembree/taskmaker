@@ -23,12 +23,13 @@ class TasksController < ApplicationController
       render json: @task.errors, status: :unprocessable_entity
     end
   end
-  #tasks/id/
+  #tasks/Status/id/
   def status
     
     @task = Task.find(params[:id])
-@tasks=Task.all
-    Task.status_change
+    @task.status_change
+    @task.save
+    @tasks=Task.all
     render json: @tasks
   end
 

@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
 
   def status_change
-    @task.status = !@task.status
+    self.status = !self.status
   end
+
 end
