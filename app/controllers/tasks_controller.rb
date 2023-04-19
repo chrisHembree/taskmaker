@@ -26,6 +26,8 @@ class TasksController < ApplicationController
   #tasks/id/
   def status
     
+    @task = Task.find(params[:id])
+@tasks=Task.all
     Task.status_change
     render json: @tasks
   end
